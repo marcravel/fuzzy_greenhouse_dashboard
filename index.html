@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akıllı Sera Fuzzy Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌱 Akıllı Sera Fuzzy Simülatörü</h1>
+    <p>Bu panel, gömülü sistemden bağımsız olarak fuzzy logic algoritmasını tarayıcı üzerinde simüle eder.</p>
+
+    <!-- INPUTS -->
+    <div class="section">
+        <h2>1. Sensör Simülasyonu</h2>
+        <div class="grid-inputs">
+            <div class="input-group">
+                <label>Sıcaklık (°C) <span id="val_temp" class="value-display">25</span></label>
+                <input type="range" id="in_temp" min="-10" max="50" step="0.5" value="25">
+            </div>
+            <div class="input-group">
+                <label>Hava Nemi (%) <span id="val_hum" class="value-display">60</span></label>
+                <input type="range" id="in_hum" min="0" max="100" step="1" value="60">
+            </div>
+            <div class="input-group">
+                <label>Işık Şiddeti (Lux) <span id="val_light" class="value-display">5000</span></label>
+                <input type="range" id="in_light" min="0" max="20000" step="100" value="5000">
+            </div>
+            <div class="input-group">
+                <label>Toprak Nemi (%) <span id="val_soil" class="value-display">40</span></label>
+                <input type="range" id="in_soil" min="0" max="100" step="1" value="40">
+            </div>
+        </div>
+    </div>
+
+    <!-- MEMBERSHIPS -->
+    <div class="section">
+        <h2>2. Bulanıklaştırma (Fuzzification)</h2>
+        <table id="membershipTable">
+            <thead>
+                <tr>
+                    <th>Giriş</th>
+                    <th>Çok Düşük</th>
+                    <th>Düşük</th>
+                    <th>Orta</th>
+                    <th>Yüksek</th>
+                    <th>Çok Yüksek</th>
+                    <th>Etiket</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populated by JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- DECISIONS -->
+    <div class="section">
+        <h2>3. Sistem Kararları (Defuzzification / Kurallar)</h2>
+        <table id="decisionsTable">
+            <thead>
+                <tr>
+                    <th>Kontrol Edilen Birim</th>
+                    <th>Karar (Etiket)</th>
+                    <th>Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Populated by JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        Fuzzy Greenhouse Dashboard v1.0
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
